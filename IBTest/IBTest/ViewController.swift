@@ -23,14 +23,20 @@ class ViewController: UIViewController {
     
     
     @IBAction func clickBtn01(_ sender: Any) {
+        self.uiTitle01.text="Button01 Cilicked"
     }
     @IBAction func clickBtn02(_ sender: Any) {
+         self.uiTitle02.text="Button02 Cilicked"
     }
     
-    @IBAction func clickBtn03(_ sender: Any){}
-    @IBAction func clickBtn04(_ sender: Any){}
+    @IBAction func clickBtn03(_ sender: Any){
+        self.uiTitle03.text="Button03 Cilicked"
+    }
+    @IBAction func clickBtn04(_ sender: Any){
+         self.uiTitle04.text="Button04 Cilicked"
+    }
     
-    @IBAction func clickBtn05(_ sender: Any) {
+    @IBAction func clickBtn05(_ sender: Any) { self.uiTitle05.text="Button05 Cilicked"
     }
 }
 
