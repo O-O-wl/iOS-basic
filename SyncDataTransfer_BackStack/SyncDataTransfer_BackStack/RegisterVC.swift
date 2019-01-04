@@ -13,37 +13,18 @@ class RegisterVC : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tfInput.text = userEmail
-        self.swUpdate.isOn = self.userUpdate
-        self.stprInterval.value = Double(self.userUpdateInterval)
+        let save = UserDefaults.standard
+        tfPage2.text = save.string(forKey: "page1")
         
     }
-   // 이메일 텍스트 필드
-    @IBOutlet var tfInput: UITextField!
-   // 간격 스태퍼
-    @IBOutlet var stprInterval: UIStepper!
-   // 갱신여부 스위치
-    @IBOutlet var swUpdate: UISwitch!
+    @IBOutlet var tfPage2: UITextField!
     
-    @IBOutlet var lbUpdate: UILabel!
+    var page2Data = ""
     
-
-    @IBOutlet var lbInterval: UILabel!
-    
-    @IBAction func swUpdateOnOff(_ sender: Any) {
-        lbUpdate.text = swUpdate.isOn ? "자동갱신" : "수동갱신"
+    @IBAction func tfChange(_ sender: Any) {
+        page2Data = tfPage2.text!
+        let save = UserDefaults.standard
+        save.set(page2Data,forKey:"page2")
     }
-    
-    @IBAction func tfEmail(_ sender: Any) {
-        
-    }
-    @IBAction func stprUpdateInterval(_ sender: Any) {        lbInterval.text = "\(Int(stprInterval.value))분마다"
-    }
-    
-    var userEmail = ""
-    var userUpdate = false
-    var userUpdateInterval = 0
-
-    
     
 }
