@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" id="O7v-4b-CtF">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="7bN-hN-Hvo">
                             <connections>
-                                <action selector="onSubmit:" destination="BYZ-38-t0r" id="UVE-9G-Xu0"/>
+                                <action selector="onsubmit:" destination="BYZ-38-t0r" id="Fo9-Yd-M9j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,6 +94,7 @@
                         <outlet property="stpUpdateInterval" destination="8nC-kr-To2" id="YXg-fk-ibw"/>
                         <outlet property="swUpdate" destination="7gl-bN-hmy" id="zcu-YX-ejv"/>
                         <outlet property="tfInput" destination="Fcw-9k-j91" id="Pth-Jw-PRG"/>
+                        <segue destination="l6Z-sp-dxQ" kind="show" identifier="menualSegue" id="1cT-Yw-Ik4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,11 +151,6 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drr-9x-B3H">
-                                <rect key="frame" x="164" y="429" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OQv-8c-rA4"/>
@@ -167,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BD-uX-u4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2425" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KBy-js-ivq">

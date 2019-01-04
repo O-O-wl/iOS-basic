@@ -39,21 +39,23 @@ class ViewController: UIViewController {
         lbUpdate.text=swUpdate.isOn ? "자동갱신":"수동갱신"
     }
     
- 
-    @IBAction func onSubmit(_ sender: Any) {
     
-        guard let rvc = self.storyboard!.instantiateViewController(withIdentifier: "RVC") as? ResultVC
-            else{return}
+    @IBAction func onsubmit(_ sender: Any) {
+        performSegue(withIdentifier: "menualSegue", sender: self)
         
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        guard let rvc = segue.destination as? ResultVC else {
+            return
+        }
         rvc.resultIntervalInfo = Int(self.stpUpdateInterval.value)
         rvc.resultUpdateInfo = self.swUpdate.isOn
         rvc.resultEmailInfo = self.tfInput.text!
-     
-        self.navigationController?.pushViewController(rvc, animated: true)
         
-           }
+        
+    }
     
-  
 }
 
