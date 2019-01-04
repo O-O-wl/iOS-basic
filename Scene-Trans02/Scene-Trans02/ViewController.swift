@@ -26,9 +26,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func movePresent(_ sender: Any) {
-        let uvc = self.storyboard!.instantiateViewController(withIdentifier: "SecondVC")
-        uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        present(uvc,animated: true)
+       let alert =  UIAlertController(title: "알림창", message: "안녕하세요 이동영입니다.", preferredStyle: .alert )
+       
+        let hello = UIAlertAction(title: "안녕하세요", style: .default , handler: nil)
+        
+        alert.addAction(hello)
+        
+        present(alert,animated: true)
     }
 }
 
