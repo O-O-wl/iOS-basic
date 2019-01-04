@@ -39,22 +39,21 @@ class ViewController: UIViewController {
         lbUpdate.text=swUpdate.isOn ? "자동갱신":"수동갱신"
     }
     
+ 
+    @IBAction func onSubmit(_ sender: Any) {
     
-    // 전송버튼 메소드
-    @IBAction func submit(_ sender: Any) {
-        
-        
-       guard let rvc = self.storyboard!.instantiateViewController(withIdentifier: "RVC") as? ResultVC
-        else{return}
+        guard let rvc = self.storyboard!.instantiateViewController(withIdentifier: "RVC") as? ResultVC
+            else{return}
         
         
         rvc.resultIntervalInfo = Int(self.stpUpdateInterval.value)
         rvc.resultUpdateInfo = self.swUpdate.isOn
         rvc.resultEmailInfo = self.tfInput.text!
+     
+        self.navigationController?.pushViewController(rvc, animated: true)
         
-        
-        self.present(rvc, animated: true)
-        
-}
+           }
+    
+  
 }
 
