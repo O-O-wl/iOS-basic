@@ -10,14 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   // let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main <#T##Bundle?#><#T##Bundle?#>)
+    @IBOutlet var loginResult: UILabel!
     
-    @IBAction func moveNext(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let uvc = storyboard.instantiateViewController(withIdentifier: "SecondVC")
-        uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        present(uvc,animated: true)
+    @IBAction func login(_ sender: Any) {
+        let loginAlert = UIAlertController(title: "사용자인증", message: "ID , PW 입력해주세요.", preferredStyle: .alert)
+        loginAlert.addTextField(configurationHandler:{
+            $0.placeholder="ID"
+            
+        })
+        loginAlert.addTextField(configurationHandler:{
+            $0.placeholder="PW"
+            $0.isSecureTextEntry = true
+            
+            
+            
+        })
+        let logbtn =  UIAlertAction(title: "로그인", style: .default, handler:{ (_ ) in
+            self.loginResult.text =
+                (loginAlert.textFields![0].text == "이동영" && loginAlert.textFields![1].text == "1234") ? "성공" : "실패"
+                
+            })
+        
+            loginAlert.addAction(logbtn)
+        
+        
+        present(loginAlert,animated: true)
+
+        
     }
+    
     
 }
 
