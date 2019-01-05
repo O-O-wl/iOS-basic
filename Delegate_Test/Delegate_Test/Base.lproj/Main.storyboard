@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH5-qq-4WF">
-                                <rect key="frame" x="50" y="171" width="275" height="90"/>
+                                <rect key="frame" x="64" y="76" width="249" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Image Picker Controller
@@ -176,10 +176,26 @@ Delegation</string>
                                     <segue destination="eQX-Ww-pox" kind="unwind" unwindAction="unWind:" id="xX9-OH-JQT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fPq-Et-Mgw">
+                                <rect key="frame" x="41" y="204" width="295" height="307"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh3-8q-WDe">
+                                <rect key="frame" x="150" y="531" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="이미지선택"/>
+                                <connections>
+                                    <action selector="btnPick:" destination="igJ-1C-UC5" eventType="touchUpInside" id="33p-Bo-6Ol"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Pj7-PD-ctA"/>
                     </view>
+                    <connections>
+                        <outlet property="imgView" destination="fPq-Et-Mgw" id="79I-eI-yBI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tP-ZG-pa0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eQX-Ww-pox" userLabel="Exit" sceneMemberID="exit"/>
