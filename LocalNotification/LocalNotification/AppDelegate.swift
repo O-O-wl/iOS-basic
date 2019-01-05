@@ -98,12 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let storyboard = UIStoryboard(name:"Main", bundle: Bundle.main)
-        let VC = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
-        VC!.lab = "\(response.notification.request.content.userInfo["name"]!)님 안녕하세요 ! "
-        
-        VC?.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-        
+  
         completionHandler()
           //  self.present(VC!, animated: true )
         }
