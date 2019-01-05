@@ -14,32 +14,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /************************************************
+        *
+        *   초기 뱃지,알림창,사운드 사용자 확인여부 인증부
+        *
+        *************************************************/
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert,.badge,.sound], completionHandler: {(didAllow,e) in })
         
         return true
     }
 
+    
+    /**#########################################################
+    *
+    *            앱 라이프사이클에서 백그라운드 상태 진입시 실행
+    *
+     ########################################################**/
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-        UNUserNotificationCenter.current().getNotificationSettings{settings in if(settings.authorizationStatus == UNAuthorizationStatus.authorized){        /** 컨텐츠 셋팅부  **/
+        
+        
+    /**================================ 구분선==================================***/
+        
+        //=================================================
+        //
+        //   센터 객체를 가져와서 초기 알림허용 상태 확인 if
+        //=================================================
+        UNUserNotificationCenter.current().getNotificationSettings{settings in if(settings.authorizationStatus == UNAuthorizationStatus.authorized){
+            
+        /******************************
+        *           컨텐츠 셋팅부
+        *******************************/
+            
         let contents = UNMutableNotificationContent()
         contents.title = "타이틀"
         contents.subtitle = "서브타이틀"
         contents.body = "여기는 엄청 길게 글을 맘대로 늘어뜨려 쓸수 있고 이것 저것 다 쓸 수 있는 이곳은 바로 바디"
         contents.sound = UNNotificationSound.default
         contents.badge = 1
-        
-        // 시간 셋팅부
+            
+            
+        //=======================
+        //      시간 셋팅부
+        //=======================
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
+            
+            
+        /*********************************
+        *
+        *      트리거와 컨턴츠로 요청객체생성
+        *
+        **********************************/
         let request = UNNotificationRequest(identifier: "init", content: contents, trigger: trigger)
-        
+        //=====================================================
+        //
         // center 에 request 등록  --- IoC개념으로 알아서 시스템이 실행함
+        //
+        //====================================================
         UNUserNotificationCenter.current().add(request)
             }}
         
