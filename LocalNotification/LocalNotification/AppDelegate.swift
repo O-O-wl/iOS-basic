@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
      
-            print("\( notification.request.content.userInfo["name"]!)님 어서 오세요 ! ")
+//            print("\( notification.request.content.userInfo["name"]!)님 어서 오세요 ! ")
         
        
         
