@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 class ImagePickerControllerDelegationVC : UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      
+        imgView.layer.borderWidth = 1
+    }
     @IBOutlet var imgView: UIImageView!
     
     
