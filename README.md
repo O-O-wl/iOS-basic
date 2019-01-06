@@ -12,7 +12,7 @@
 
 * [HelloWorld 실행영상](./HelloWorld/HelloWorld.md)
 
-* [Delegate_Test 실행영상](./Readme/Delegate_Test.md)
+* [Delegate_Test 실행영상](./Delegate_Test/Delegate_Test.md)
       
 
 
