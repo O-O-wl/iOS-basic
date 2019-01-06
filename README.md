@@ -10,7 +10,7 @@
 ## 실행영상 ##
 -------------
 
-* [HelloWorld 실행영상](./Readme/HelloWorld.md)
+* [HelloWorld 실행영상](./HelloWorld/HelloWorld.md)
 
 * [Delegate_Test 실행영상](./Readme/Delegate_Test.md)
       
