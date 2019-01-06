@@ -194,7 +194,7 @@ Delegation</string>
                         <viewLayoutGuide key="safeArea" id="Pj7-PD-ctA"/>
                     </view>
                     <connections>
-                        <outlet property="imgView" destination="fPq-Et-Mgw" id="79I-eI-yBI"/>
+                        <outlet property="imgView" destination="fPq-Et-Mgw" id="E4C-n1-Cam"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tP-ZG-pa0" userLabel="First Responder" sceneMemberID="firstResponder"/>

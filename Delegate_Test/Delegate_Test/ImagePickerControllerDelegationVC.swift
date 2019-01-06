@@ -12,13 +12,15 @@ import UIKit
 class ImagePickerControllerDelegationVC : UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     @IBOutlet var imgView: UIImageView!
+    
+    
     @IBAction func btnPick(_ sender: UIButton) {
         
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         picker.delegate = self
-        picker.present(picker, animated: false)
+        self.present(picker, animated: false)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
