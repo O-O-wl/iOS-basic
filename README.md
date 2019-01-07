@@ -12,6 +12,8 @@
 
 * [HelloWorld 실행영상](./HelloWorld/HelloWorld.md)
 
+* [Login_Segue 실행영상](./Login_Segue/Login_Segue.md)
+
 * [Delegate_Test 실행영상](./Delegate_Test/Delegate_Test.md)
       
 
