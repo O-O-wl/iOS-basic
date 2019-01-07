@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        PW.isSecureTextEntry = true
+    }
+    
     @IBOutlet var ID: UITextField!
     
     
