@@ -11,6 +11,20 @@ import UIKit
 
 class ListViewController : UITableViewController{
     
+    override func viewWillAppear(_ animated: Bool) {
+        //======================
+        // 콘텐츠배치전의 대충의 높이값
+        //======================
+        self.tableView.estimatedRowHeight = 50
+        
+        /************************************
+         *       테이블뷰 전체목록 생성시점에
+         *           콘텐츠레이아웃에
+         *           따른 높이 재설정
+         ***********************************/
+        self.tableView.rowHeight = UITableView.automaticDimension
+    }
+    
     var list = [String]()
     
     @IBAction func add(_ sender: Any) {
@@ -71,7 +85,8 @@ class ListViewController : UITableViewController{
         
         return cell
     }
-    
+    /**
+     -- 직접 셀의 높이 반환.  ! 개발자 직접 계산
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = self.list[indexPath.row]
         
@@ -82,5 +97,6 @@ class ListViewController : UITableViewController{
         print(height)
         return height
     }
+ */
     
 }
