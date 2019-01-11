@@ -16,10 +16,10 @@ class ListViewController : UITableViewController{
 
     // 정적 데이터
     var dataset = [
-    ("다크나이트","영웅물에 철학에 음악까지 더해져 에술이 되다.","2008-09-04",8.95),
-    ("말할수 없는 비밀","여기서 너까지 다섯걸음","2015-05-07",9.19),
-    ("너의이름은","아직 만난 적 없는 너를, 찾고 있어","2017-01-07",9.02),
-    ("목소리의 형태","나는 네가 정말 싫었다. 너를 다시 만나기 전까진…","2017-05-09",8.74)]
+    ("다크나이트","영웅물에 철학에 음악까지 더해져 에술이 되다.","2008-09-04",8.95,"darknight.jpg"),
+    ("말할수 없는 비밀","여기서 너까지 다섯걸음","2015-05-07",9.19,"secret.jpg"),
+    ("너의이름은","아직 만난 적 없는 너를, 찾고 있어","2017-01-07",9.02,"yourname.jpg"),
+    ("목소리의 형태","나는 네가 정말 싫었다. 너를 다시 만나기 전까진…","2017-05-09",8.74,"voice.jpg")]
     
     
     //======================================
@@ -32,12 +32,13 @@ class ListViewController : UITableViewController{
     
         var datalist = [MovieVO]()
         
-        for(title,description,openDate,rating) in self.dataset {
+        for(title,description,openDate,rating,thumbnail) in self.dataset {
             var movie = MovieVO()
             movie.title = title
             movie.description = description
             movie.openDate = openDate
             movie.rating = rating
+            movie.thumbnail=thumbnail
             datalist.append(movie)
         }
         return datalist
@@ -72,6 +73,10 @@ class ListViewController : UITableViewController{
         cell.desc.text = row.description
         cell.openDate.text = row.openDate
         cell.rating.text = "\(row.rating!)"
+        cell.thumbnail.image = UIImage(named: row.thumbnail!)!
+        cell.desc.layer.masksToBounds = true
+        cell.desc.layer.cornerRadius = 5
+    
         
         
         /*

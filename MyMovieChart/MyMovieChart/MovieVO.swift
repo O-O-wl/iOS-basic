@@ -19,5 +19,7 @@ var title : String?
 var description : String?
 var openDate : String?
 var rating : Double?
+    
+
 
 }
