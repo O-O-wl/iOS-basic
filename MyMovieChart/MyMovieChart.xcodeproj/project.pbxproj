@@ -14,6 +14,7 @@
 		0E69A15A21E775BD00E6D447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E69A15821E775BD00E6D447 /* LaunchScreen.storyboard */; };
 		0E69A16221E78A8A00E6D447 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69A16121E78A8A00E6D447 /* ListViewController.swift */; };
 		0E69A16421E78ABF00E6D447 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69A16321E78ABF00E6D447 /* MovieVO.swift */; };
+		0EE0992521E88958006CFD08 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0992421E88958006CFD08 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0E69A15B21E775BD00E6D447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E69A16121E78A8A00E6D447 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0E69A16321E78ABF00E6D447 /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
+		0EE0992421E88958006CFD08 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0E69A15B21E775BD00E6D447 /* Info.plist */,
 				0E69A16121E78A8A00E6D447 /* ListViewController.swift */,
 				0E69A16321E78ABF00E6D447 /* MovieVO.swift */,
+				0EE0992421E88958006CFD08 /* MovieCell.swift */,
 			);
 			path = MyMovieChart;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				0E69A15221E775BC00E6D447 /* ViewController.swift in Sources */,
 				0E69A16421E78ABF00E6D447 /* MovieVO.swift in Sources */,
 				0E69A15021E775BC00E6D447 /* AppDelegate.swift in Sources */,
+				0EE0992521E88958006CFD08 /* MovieCell.swift in Sources */,
 				0E69A16221E78A8A00E6D447 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

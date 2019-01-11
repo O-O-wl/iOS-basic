@@ -66,19 +66,30 @@ class ListViewController : UITableViewController{
         let row = self.movieList[ indexPath.row ]
         
         // 재사용큐 리사이클큐를 이용하여 이미 생성된 셀인지 확인후 생성 혹은 탐색 후 반환
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! MovieCell
         
-        /// 태그를 통해 프로토타입셀의 뷰를 코드에서 터칭가능
+        cell.title.text = row.title
+        cell.desc.text = row.description
+        cell.openDate.text = row.openDate
+        cell.rating.text = "\(row.rating!)"
+        
+        
+        /*
+         태그를 통해 프로토타입셀의 뷰를
+         코드에서 터칭가능
+       
         let title = cell.viewWithTag(101) as? UILabel
         let description = cell.viewWithTag(102) as? UILabel
         let openDate = cell.viewWithTag(103) as? UILabel
         let rating = cell.viewWithTag(104) as? UILabel
-        
+ 
         
         title?.text = row.title
         description?.text = row.description
         openDate?.text = row.openDate
         rating?.text = String(row.rating!)
+       */
+        
         
         
         return cell
