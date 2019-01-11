@@ -6,6 +6,11 @@
 //  Copyright © 2019 이동영. All rights reserved.
 //
 
+
+
+//=======================
+//   데이터소스를 담을 VO
+//=======================
 import Foundation
 
 class MovieVO{
