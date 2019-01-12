@@ -20,6 +20,16 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="Cby-iP-2jg">
                             <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7G-bb-RUA">
+                                    <rect key="frame" x="168" y="7" width="39" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="더보기"/>
+                                    <connections>
+                                        <action selector="more:" destination="Knx-IO-mW2" eventType="touchUpInside" id="7Vv-It-3Vu"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
@@ -75,13 +85,6 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개봉일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdm-3d-6hJ">
-                                            <rect key="frame" x="206" y="20" width="116" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raD-kb-J6w">
                                             <rect key="frame" x="7" y="4" width="60" height="70"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,7 +104,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="desc" destination="Pck-X6-HAj" id="qNd-lg-J4m"/>
-                                    <outlet property="openDate" destination="qdm-3d-6hJ" id="8VD-ns-g3o"/>
                                     <outlet property="rating" destination="5vH-ZQ-S33" id="vwJ-oe-ccS"/>
                                     <outlet property="thumbnail" destination="raD-kb-J6w" id="0U8-5n-NuD"/>
                                     <outlet property="title" destination="hJg-Ux-yWa" id="OAR-BQ-t6l"/>
@@ -114,6 +116,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="영화정보" id="e1W-Yp-gF6"/>
+                    <connections>
+                        <outlet property="btnMore" destination="P7G-bb-RUA" id="TSg-Zy-TKe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z23-pg-0AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

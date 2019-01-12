@@ -12,11 +12,17 @@ import UIKit
 
 class ListViewController : UITableViewController{
     
+    var page = 1
+    var total = 10;
     override func viewDidLoad() {
         super.viewDidLoad()
+        callByApi()
+    }
+
+    func callByApi(){
         
         // 영화목록 API  URI
-        let uri = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=10&genreId=&order=releasedateasc"
+        let uri = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=\(self.page)&count=10&genreId=&order=releasedateasc"
         
         //URL객체로 타입캐스팅
         let url = URL(string: uri)!
@@ -25,7 +31,7 @@ class ListViewController : UITableViewController{
         let apiData = try! Data(contentsOf:url)
         
         /**========================
-        / 데이터객체를 문자열객체로 인코딩
+         / 데이터객체를 문자열객체로 인코딩
          ========================*/
         let log = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue ) ?? ""
         NSLog("API RESULT = \(log)")
@@ -34,6 +40,8 @@ class ListViewController : UITableViewController{
             /// - Note: JSON 파싱 구현부 -- 핸들링 메소드가 많은 파운데이션 프레임웤의 NS 타입으로 변환
             let apiDictionary = try JSONSerialization.jsonObject(with: apiData, options: []) as! NSDictionary
             let hoppin = apiDictionary["hoppin"] as! NSDictionary
+            let totalCount = (hoppin["totalCount"] as! NSString).integerValue
+            self.total = totalCount
             let movies = hoppin["movies"] as! NSDictionary
             let movie = movies["movie"] as! NSArray
             
@@ -53,13 +61,10 @@ class ListViewController : UITableViewController{
                 self.movieList.append(mvo)
             }
             
-            
+            self.tableView.reloadData()
         }catch{}
         
-        
-        
     }
-
     /**
     ================================= 정적 데이터 =====================================
     - Note: 정적데이터 활용후 네트워크 api 로 대체
@@ -104,7 +109,7 @@ class ListViewController : UITableViewController{
         
         cell.title.text = row.title
         cell.desc.text = row.description
-        cell.openDate.text = row.openDate
+       // cell.openDate.text = row.openDate
         cell.rating.text = "\(row.rating!)"
         // 이미지 URL 변환
         let imgUrl : URL! = URL(string: row.thumbnail!)
@@ -113,27 +118,21 @@ class ListViewController : UITableViewController{
         cell.desc.layer.masksToBounds = true
         cell.desc.layer.cornerRadius = 5
     
+        return cell
         
-        
-        /*
-         태그를 통해 프로토타입셀의 뷰를
-         코드에서 터칭가능
-       
+        /**
+         - Note:태그를 통해 프로토타입셀의 뷰를 코드에서 터칭가능
+         
         let title = cell.viewWithTag(101) as? UILabel
         let description = cell.viewWithTag(102) as? UILabel
         let openDate = cell.viewWithTag(103) as? UILabel
         let rating = cell.viewWithTag(104) as? UILabel
  
-        
         title?.text = row.title
         description?.text = row.description
         openDate?.text = row.openDate
         rating?.text = String(row.rating!)
        */
-        
-        
-        
-        return cell
         
     }
     
@@ -144,4 +143,17 @@ class ListViewController : UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row)번째 행입니다.")
     }
+    @IBOutlet var btnMore: UIButton!
+    
+    @IBAction func more(_ sender: Any) {
+        self.page = self.page+1
+        if self.movieList.count > total {
+            btnMore.isHidden = true  }
+        callByApi()
+        
+    }
+    
+    
+    
+    
 }

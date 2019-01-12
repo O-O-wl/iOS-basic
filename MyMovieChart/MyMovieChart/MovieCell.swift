@@ -13,7 +13,7 @@ class MovieCell : UITableViewCell{
     
     @IBOutlet var title: UILabel!
     @IBOutlet var desc: UILabel!
-    @IBOutlet var openDate: UILabel!
+   // @IBOutlet var openDate: UILabel!
     @IBOutlet var rating: UILabel!
     @IBOutlet var thumbnail: UIImageView!
     
