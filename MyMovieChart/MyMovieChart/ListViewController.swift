@@ -12,7 +12,19 @@ import UIKit
 
 class ListViewController : UITableViewController{
     
-   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let uri = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=10&genreId=&order=releasedateasc"
+        
+        let url = URL(string: uri)!
+        
+        let apiData = try! Data(contentsOf:url)
+        
+        let log = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue ) ?? ""
+        NSLog("API RESULT = \(log)")
+        
+    }
 
     // 정적 데이터
     var dataset = [
