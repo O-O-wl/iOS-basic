@@ -30,15 +30,45 @@ class ListViewController : UITableViewController{
         let log = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue ) ?? ""
         NSLog("API RESULT = \(log)")
         
+        do{
+            /// - Note: JSON 파싱 구현부 -- 핸들링 메소드가 많은 파운데이션 프레임웤의 NS 타입으로 변환
+            let apiDictionary = try JSONSerialization.jsonObject(with: apiData, options: []) as! NSDictionary
+            let hoppin = apiDictionary["hoppin"] as! NSDictionary
+            let movies = hoppin["movies"] as! NSDictionary
+            let movie = movies["movie"] as! NSArray
+            
+            for row in movie {
+                
+                /// - Note: NSDictionary , NSArray 의
+                /// - Returns:  `Any` 이므로 타입 캐스팅필요
+                let r = row as! NSDictionary
+                
+                
+                let mvo = MovieVO()
+                mvo.title = r["title"] as? String
+                mvo.description = r["genreNames"] as? String
+                mvo.rating = (r["ratingAverage"] as! NSString).doubleValue
+                mvo.thumbnail = r["thumbnailImage"] as? String
+                mvo.detail = r["linkUrl"] as? String
+                self.movieList.append(mvo)
+            }
+            
+            
+        }catch{}
+        
+        
+        
     }
 
-    // 정적 데이터
+    /**
+    ================================= 정적 데이터 =====================================
+    - Note: 정적데이터 활용후 네트워크 api 로 대체
     var dataset = [
     ("다크나이트","영웅물에 철학에 음악까지 더해져 에술이 되다.","2008-09-04",8.95,"darknight.jpg"),
     ("말할수 없는 비밀","여기서 너까지 다섯걸음","2015-05-07",9.19,"secret.jpg"),
     ("너의이름은","아직 만난 적 없는 너를, 찾고 있어","2017-01-07",9.02,"yourname.jpg"),
     ("목소리의 형태","나는 네가 정말 싫었다. 너를 다시 만나기 전까진…","2017-05-09",8.74,"voice.jpg")]
-    
+    ================================================================================== */
     
     //======================================
     //            데이터소스
@@ -46,23 +76,8 @@ class ListViewController : UITableViewController{
     //  'lazy'키워드 생략시 dataset 사용불가
     //      메모리 할당시점을 정확히 알수없음
     //======================================
-     lazy var movieList : [MovieVO] = {
-    
-        var datalist = [MovieVO]()
-        
-        for(title,description,openDate,rating,thumbnail) in self.dataset {
-            var movie = MovieVO()
-            movie.title = title
-            movie.description = description
-            movie.openDate = openDate
-            movie.rating = rating
-            movie.thumbnail=thumbnail
-            datalist.append(movie)
-        }
-        return datalist
-    }()
-    
-    
+ 
+    var movieList : [MovieVO] = []
     /**
     *****************************************
     *
@@ -91,7 +106,10 @@ class ListViewController : UITableViewController{
         cell.desc.text = row.description
         cell.openDate.text = row.openDate
         cell.rating.text = "\(row.rating!)"
-        cell.thumbnail.image = UIImage(named: row.thumbnail!)!
+        // 이미지 URL 변환
+        let imgUrl : URL! = URL(string: row.thumbnail!)
+        // 바이너리 데이터를 URL로 변환
+        cell.thumbnail.image = UIImage(data: try! Data(contentsOf: imgUrl))
         cell.desc.layer.masksToBounds = true
         cell.desc.layer.cornerRadius = 5
     

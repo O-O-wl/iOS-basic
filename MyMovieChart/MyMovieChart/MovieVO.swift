@@ -14,12 +14,14 @@
 import Foundation
 
 class MovieVO{
-var thumbnail : String?
-var title : String?
-var description : String?
-var openDate : String?
-var rating : Double?
+    var thumbnail : String?
+    var title : String?
+    var description : String?
+    var openDate : String?
+    var rating : Double?
+    var detail : String?
     
-
-
+    
+    
+    
 }
