@@ -15,12 +15,18 @@ class ListViewController : UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 영화목록 API  URI
         let uri = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=10&genreId=&order=releasedateasc"
         
+        //URL객체로 타입캐스팅
         let url = URL(string: uri)!
         
+        // 데이터 불러오기
         let apiData = try! Data(contentsOf:url)
         
+        /**========================
+        / 데이터객체를 문자열객체로 인코딩
+         ========================*/
         let log = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue ) ?? ""
         NSLog("API RESULT = \(log)")
         
