@@ -33,8 +33,8 @@ class ListViewController : UITableViewController{
         /**========================
          / 데이터객체를 문자열객체로 인코딩
          ========================*/
-        let log = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue ) ?? ""
-        NSLog("API RESULT = \(log)")
+      //  let log = NSString(data: apiData, encoding: String.Encoding.utf8.rawValue ) ?? ""
+       // NSLog("API RESULT = \(log)")
         
         do{
             /// - Note: JSON 파싱 구현부 -- 핸들링 메소드가 많은 파운데이션 프레임웤의 NS 타입으로 변환
@@ -66,7 +66,7 @@ class ListViewController : UITableViewController{
         
     }
     /**
-    ================================= 정적 데이터 =====================================
+   
     - Note: 정적데이터 활용후 네트워크 api 로 대체
     var dataset = [
     ("다크나이트","영웅물에 철학에 음악까지 더해져 에술이 되다.","2008-09-04",8.95,"darknight.jpg"),
