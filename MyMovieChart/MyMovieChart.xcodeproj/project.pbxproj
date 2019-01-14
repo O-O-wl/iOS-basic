@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E20B0AE21ECBDCF00B9A6E9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E20B0AD21ECBDCF00B9A6E9 /* WebViewController.swift */; };
 		0E69A15021E775BC00E6D447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E69A14F21E775BC00E6D447 /* AppDelegate.swift */; };
 		0E69A15521E775BC00E6D447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E69A15321E775BC00E6D447 /* Main.storyboard */; };
 		0E69A15721E775BD00E6D447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E69A15621E775BD00E6D447 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E20B0AD21ECBDCF00B9A6E9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0E69A14C21E775BC00E6D447 /* MyMovieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E69A14F21E775BC00E6D447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E69A15421E775BC00E6D447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				0E69A16121E78A8A00E6D447 /* ListViewController.swift */,
 				0E69A16321E78ABF00E6D447 /* MovieVO.swift */,
 				0EE0992421E88958006CFD08 /* MovieCell.swift */,
+				0E20B0AD21ECBDCF00B9A6E9 /* WebViewController.swift */,
 			);
 			path = MyMovieChart;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				0E69A16421E78ABF00E6D447 /* MovieVO.swift in Sources */,
 				0E69A15021E775BC00E6D447 /* AppDelegate.swift in Sources */,
 				0EE0992521E88958006CFD08 /* MovieCell.swift in Sources */,
+				0E20B0AE21ECBDCF00B9A6E9 /* WebViewController.swift in Sources */,
 				0E69A16221E78A8A00E6D447 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

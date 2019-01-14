@@ -14,6 +14,7 @@ class ListViewController : UITableViewController{
     
     var page = 1
     var total = 10;
+    var detailUrl : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         callByApi()
@@ -146,6 +147,10 @@ class ListViewController : UITableViewController{
     ******************************/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("선택된 행은 \(indexPath.row)번째 행입니다.")
+        self.detailUrl = self.movieList[indexPath.row].detail
+        let selectedUrl = URL(string: self.detailUrl!)!
+        UserDefaults.standard.set(selectedUrl, forKey: "URL")
+        performSegue(withIdentifier: "webView", sender: self)
     }
     @IBOutlet var btnMore: UIButton!
     

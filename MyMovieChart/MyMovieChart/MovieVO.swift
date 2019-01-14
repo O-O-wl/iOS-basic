@@ -21,6 +21,7 @@ class MovieVO{
     var openDate : String?
     var rating : Double?
     var detail : String?
+ //   var linkUrl : String?
     var thumbnailImage : UIImage?
     
     
