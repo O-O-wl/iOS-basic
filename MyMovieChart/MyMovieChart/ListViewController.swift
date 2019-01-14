@@ -161,8 +161,12 @@ class ListViewController : UITableViewController{
         callByApi()
         
     }
-    
-    
+    //==================================
+    //      스크롤시 매번 호출되는
+    //      cellForRowAt에서
+    //    계속적으로 호출되므로 분리
+    //    메모이제이션을 통해 네트워크연결횟수 감소
+    //==================================
     func getImage(_ index : Int) -> UIImage {
         let mvo = self.movieList[index]
         if let savedImage = mvo.thumbnailImage {
@@ -171,6 +175,7 @@ class ListViewController : UITableViewController{
         }else {
             let uri = mvo.thumbnail
             let url = URL(string: uri!)
+            
             let imageData = try! Data(contentsOf: url!)
             mvo.thumbnailImage = UIImage(data: imageData)!
             print("\(index)번째 이미지를 네트워크상에 요청합니다")

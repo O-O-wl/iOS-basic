@@ -17,9 +17,10 @@ class WebViewController : UIViewController{
         super.viewDidLoad()
         if let url = UserDefaults.standard.url(forKey: "URL"){
             let req = URLRequest(url: url)
-            DispatchQueue.main.async {
+            //DispatchQueue.main.async {
+            /// - Note: 웹뷰의 load 메소드는 네트워크상의 HTML문서요청하는 비동기 메소드
                 self.webView.load(req)
-            }
+           // }
         }else {
             let alert = UIAlertController()
             alert.title = "오류!"
