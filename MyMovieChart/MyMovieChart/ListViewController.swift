@@ -58,6 +58,7 @@ class ListViewController : UITableViewController{
                 mvo.rating = (r["ratingAverage"] as! NSString).doubleValue
                 mvo.thumbnail = r["thumbnailImage"] as? String
                 mvo.detail = r["linkUrl"] as? String
+                //mvo.thumbnailImage = UIImage(data: try! Data(contentsOf: URL(string: mvo.thumbnail!)!))
                 self.movieList.append(mvo)
             }
             
@@ -112,9 +113,12 @@ class ListViewController : UITableViewController{
        // cell.openDate.text = row.openDate
         cell.rating.text = "\(row.rating!)"
         // 이미지 URL 변환
-        let imgUrl : URL! = URL(string: row.thumbnail!)
+       // let imgUrl : URL! = URL(string: row.thumbnail!)
         // 바이너리 데이터를 URL로 변환
-        cell.thumbnail.image = UIImage(data: try! Data(contentsOf: imgUrl))
+        DispatchQueue.main.async {
+            cell.thumbnail.image = self.getImage(indexPath.row)
+        }
+     //   cell.thumbnail.image = row.thumbnailImage
         cell.desc.layer.masksToBounds = true
         cell.desc.layer.cornerRadius = 5
     
@@ -154,6 +158,21 @@ class ListViewController : UITableViewController{
     }
     
     
-    
+    func getImage(_ index : Int) -> UIImage {
+        let mvo = self.movieList[index]
+        if let savedImage = mvo.thumbnailImage {
+            
+            return savedImage
+        }else {
+            let uri = mvo.thumbnail
+            let url = URL(string: uri!)
+            let imageData = try! Data(contentsOf: url!)
+            mvo.thumbnailImage = UIImage(data: imageData)!
+            print("\(index)번째 이미지를 네트워크상에 요청합니다")
+            return mvo.thumbnailImage!
+        }
+      
+    }
     
 }
+

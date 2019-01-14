@@ -12,6 +12,7 @@
 //   데이터소스를 담을 VO
 //=======================
 import Foundation
+import UIKit
 
 class MovieVO{
     var thumbnail : String?
@@ -20,7 +21,7 @@ class MovieVO{
     var openDate : String?
     var rating : Double?
     var detail : String?
-    
+    var thumbnailImage : UIImage?
     
     
     
