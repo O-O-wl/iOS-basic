@@ -15,10 +15,25 @@ class WebViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = UserDefaults.standard.url(forKey: "URL")
-        let req = URLRequest(url: url!)
-        DispatchQueue.main.async {
-            self.webView.load(req)
+        if let url = UserDefaults.standard.url(forKey: "URL"){
+            let req = URLRequest(url: url)
+            DispatchQueue.main.async {
+                self.webView.load(req)
+            }
+        }else {
+            let alert = UIAlertController()
+            alert.title = "오류!"
+            alert.message = "넘어온 데이터가 없습니다."
+            let cancel = UIAlertAction(title: "이전페이지로", style: .cancel, handler: {(_) in
+                _=self.navigationController?.popViewController(animated: false)
+                
+            })
+            
+            alert.addAction(cancel)
+            self.present(alert, animated: false, completion: nil)
+            
         }
+        
+        
     }
 }
