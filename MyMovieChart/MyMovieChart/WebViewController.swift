@@ -63,7 +63,14 @@ extension WebViewController : WKUIDelegate{
         alert("상세페이지를 불러오지 못했습니다"){
              _ = self.navigationController?.popViewController(animated: false)
         }
+        
      }
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        self.idcLoading.stopAnimating()
+        alert("상세페이지를 불러오지 못했습니다"){
+            _ = self.navigationController?.popViewController(animated: false)
+        }
+    }
 }
 // MARK: - Alert 부분 분리
 extension UIViewController {
