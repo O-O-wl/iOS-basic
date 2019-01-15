@@ -22,6 +22,11 @@
 		0EE0993021E89FED006CFD08 /* rating.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE0992F21E89FED006CFD08 /* rating.png */; };
 		0EE28B6E21EE5AAD00CD52BF /* Listbullets.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE28B6C21EE5AAD00CD52BF /* Listbullets.png */; };
 		0EE28B6F21EE5AAD00CD52BF /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE28B6D21EE5AAD00CD52BF /* Trailer.png */; };
+		0EE28B7121EE5DE700CD52BF /* TheaterVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE28B7021EE5DE700CD52BF /* TheaterVO.swift */; };
+		0EE28B7321EE5E7C00CD52BF /* TheaterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE28B7221EE5E7C00CD52BF /* TheaterListViewController.swift */; };
+		0EE28B7521EE5EE000CD52BF /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE28B7421EE5EE000CD52BF /* TheaterCell.swift */; };
+		0EE28B7821EEA2EC00CD52BF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE28B7721EEA2EC00CD52BF /* MapKit.framework */; };
+		0EE28B7A21EEA32C00CD52BF /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE28B7921EEA32C00CD52BF /* TheaterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		0EE0992F21E89FED006CFD08 /* rating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rating.png; sourceTree = "<group>"; };
 		0EE28B6C21EE5AAD00CD52BF /* Listbullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Listbullets.png; sourceTree = "<group>"; };
 		0EE28B6D21EE5AAD00CD52BF /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trailer.png; sourceTree = "<group>"; };
+		0EE28B7021EE5DE700CD52BF /* TheaterVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterVO.swift; sourceTree = "<group>"; };
+		0EE28B7221EE5E7C00CD52BF /* TheaterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListViewController.swift; sourceTree = "<group>"; };
+		0EE28B7421EE5EE000CD52BF /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
+		0EE28B7721EEA2EC00CD52BF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0EE28B7921EEA32C00CD52BF /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE28B7821EEA2EC00CD52BF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +71,7 @@
 			children = (
 				0E69A14E21E775BC00E6D447 /* MyMovieChart */,
 				0E69A14D21E775BC00E6D447 /* Products */,
+				0EE28B7621EEA2EC00CD52BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +89,7 @@
 				0EE0992621E89C81006CFD08 /* Resourse */,
 				0E69A14F21E775BC00E6D447 /* AppDelegate.swift */,
 				0E69A15321E775BC00E6D447 /* Main.storyboard */,
+				0EE28B7021EE5DE700CD52BF /* TheaterVO.swift */,
 				0E69A15621E775BD00E6D447 /* Assets.xcassets */,
 				0E69A15821E775BD00E6D447 /* LaunchScreen.storyboard */,
 				0E69A15B21E775BD00E6D447 /* Info.plist */,
@@ -84,6 +97,9 @@
 				0E69A16321E78ABF00E6D447 /* MovieVO.swift */,
 				0EE0992421E88958006CFD08 /* MovieCell.swift */,
 				0E20B0AD21ECBDCF00B9A6E9 /* WebViewController.swift */,
+				0EE28B7221EE5E7C00CD52BF /* TheaterListViewController.swift */,
+				0EE28B7421EE5EE000CD52BF /* TheaterCell.swift */,
+				0EE28B7921EEA32C00CD52BF /* TheaterViewController.swift */,
 			);
 			path = MyMovieChart;
 			sourceTree = "<group>";
@@ -100,6 +116,14 @@
 				0EE0992821E89C94006CFD08 /* secret.jpg */,
 			);
 			path = Resourse;
+			sourceTree = "<group>";
+		};
+		0EE28B7621EEA2EC00CD52BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EE28B7721EEA2EC00CD52BF /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +158,11 @@
 				TargetAttributes = {
 					0E69A14B21E775BB00E6D447 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -181,10 +210,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E69A16421E78ABF00E6D447 /* MovieVO.swift in Sources */,
+				0EE28B7521EE5EE000CD52BF /* TheaterCell.swift in Sources */,
+				0EE28B7321EE5E7C00CD52BF /* TheaterListViewController.swift in Sources */,
 				0E69A15021E775BC00E6D447 /* AppDelegate.swift in Sources */,
 				0EE0992521E88958006CFD08 /* MovieCell.swift in Sources */,
 				0E20B0AE21ECBDCF00B9A6E9 /* WebViewController.swift in Sources */,
+				0EE28B7A21EEA32C00CD52BF /* TheaterViewController.swift in Sources */,
 				0E69A16221E78A8A00E6D447 /* ListViewController.swift in Sources */,
+				0EE28B7121EE5DE700CD52BF /* TheaterVO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
