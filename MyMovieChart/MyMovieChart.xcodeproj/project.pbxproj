@@ -20,6 +20,8 @@
 		0EE0992D21E89D0D006CFD08 /* yourname.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EE0992B21E89D0D006CFD08 /* yourname.jpg */; };
 		0EE0992E21E89D0D006CFD08 /* voice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0EE0992C21E89D0D006CFD08 /* voice.jpg */; };
 		0EE0993021E89FED006CFD08 /* rating.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE0992F21E89FED006CFD08 /* rating.png */; };
+		0EE28B6E21EE5AAD00CD52BF /* Listbullets.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE28B6C21EE5AAD00CD52BF /* Listbullets.png */; };
+		0EE28B6F21EE5AAD00CD52BF /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE28B6D21EE5AAD00CD52BF /* Trailer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		0EE0992B21E89D0D006CFD08 /* yourname.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yourname.jpg; sourceTree = "<group>"; };
 		0EE0992C21E89D0D006CFD08 /* voice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = voice.jpg; sourceTree = "<group>"; };
 		0EE0992F21E89FED006CFD08 /* rating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rating.png; sourceTree = "<group>"; };
+		0EE28B6C21EE5AAD00CD52BF /* Listbullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Listbullets.png; sourceTree = "<group>"; };
+		0EE28B6D21EE5AAD00CD52BF /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trailer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		0EE0992621E89C81006CFD08 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				0EE28B6C21EE5AAD00CD52BF /* Listbullets.png */,
+				0EE28B6D21EE5AAD00CD52BF /* Trailer.png */,
 				0EE0992F21E89FED006CFD08 /* rating.png */,
 				0EE0992C21E89D0D006CFD08 /* voice.jpg */,
 				0EE0992B21E89D0D006CFD08 /* yourname.jpg */,
@@ -159,8 +165,10 @@
 				0EE0993021E89FED006CFD08 /* rating.png in Resources */,
 				0E69A15A21E775BD00E6D447 /* LaunchScreen.storyboard in Resources */,
 				0EE0992E21E89D0D006CFD08 /* voice.jpg in Resources */,
+				0EE28B6F21EE5AAD00CD52BF /* Trailer.png in Resources */,
 				0E69A15721E775BD00E6D447 /* Assets.xcassets in Resources */,
 				0E69A15521E775BC00E6D447 /* Main.storyboard in Resources */,
+				0EE28B6E21EE5AAD00CD52BF /* Listbullets.png in Resources */,
 				0EE0992A21E89C95006CFD08 /* secret.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
