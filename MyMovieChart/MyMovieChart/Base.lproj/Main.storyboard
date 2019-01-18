@@ -22,16 +22,23 @@
                             <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7G-bb-RUA">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7G-bb-RUA">
                                     <rect key="frame" x="168" y="7" width="39" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="QT4-hX-r7R"/>
+                                        <constraint firstAttribute="width" constant="39" id="zpZ-OA-HNZ"/>
+                                    </constraints>
                                     <state key="normal" title="더보기"/>
                                     <connections>
                                         <action selector="more:" destination="Knx-IO-mW2" eventType="touchUpInside" id="7Vv-It-3Vu"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="P7G-bb-RUA" firstAttribute="centerX" secondItem="Cby-iP-2jg" secondAttribute="centerX" id="Rwy-Vs-hPH"/>
+                                <constraint firstAttribute="bottom" secondItem="P7G-bb-RUA" secondAttribute="bottom" constant="7" id="YM2-jo-vu9"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" id="wqW-pg-7rX" customClass="MovieCell" customModule="MyMovieChart" customModuleProvider="target">
@@ -41,17 +48,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-Ux-yWa">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-Ux-yWa">
                                             <rect key="frame" x="83" y="20" width="126" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="2C1-HC-mR3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-X6-HAj">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-X6-HAj">
                                             <rect key="frame" x="83" y="41" width="176" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.92191547927461137" green="0.92191547927461137" blue="0.92191547927461137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="CE2-jw-6eH"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="영화에">
                                                     <attributes>
@@ -90,18 +101,41 @@
                                             <rect key="frame" x="7" y="4" width="60" height="70"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rating" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-81-bCL">
-                                            <rect key="frame" x="259" y="41" width="30" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating" translatesAutoresizingMaskIntoConstraints="NO" id="ZFR-81-bCL">
+                                            <rect key="frame" x="267" y="44" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Q4N-rH-yEe"/>
+                                                <constraint firstAttribute="height" constant="30" id="xVm-1A-ddN"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="평점" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-ZQ-S33">
-                                            <rect key="frame" x="259" y="49" width="63" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="평점" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-ZQ-S33">
+                                            <rect key="frame" x="290" y="52" width="43" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="i5g-c1-SCS"/>
+                                                <constraint firstAttribute="width" constant="51" id="z8z-WC-Gkr"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="5vH-ZQ-S33" secondAttribute="trailing" id="1YB-vi-5O7"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pck-X6-HAj" secondAttribute="trailing" constant="82" id="3gu-wc-bwP"/>
+                                        <constraint firstItem="Pck-X6-HAj" firstAttribute="top" secondItem="hJg-Ux-yWa" secondAttribute="bottom" constant="6" id="B4k-3n-DSJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Pck-X6-HAj" secondAttribute="bottom" constant="0.5" id="BOs-Ab-aHx"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hJg-Ux-yWa" secondAttribute="trailing" constant="124" id="C3J-O9-vFq"/>
+                                        <constraint firstAttribute="bottom" secondItem="5vH-ZQ-S33" secondAttribute="bottom" constant="12.5" id="CH0-x9-X6U"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZFR-81-bCL" secondAttribute="bottom" constant="5.5" id="IbT-4N-Jbn"/>
+                                        <constraint firstItem="Pck-X6-HAj" firstAttribute="leading" secondItem="alm-Cf-3aH" secondAttribute="leading" constant="83" id="KKG-oy-zjZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pck-X6-HAj" secondAttribute="trailing" constant="82" id="PAN-OS-gDa"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hJg-Ux-yWa" secondAttribute="trailing" constant="124" id="Q2V-p1-CCt"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZFR-81-bCL" secondAttribute="trailing" constant="44" id="b1L-5o-cYy"/>
+                                        <constraint firstItem="hJg-Ux-yWa" firstAttribute="leading" secondItem="alm-Cf-3aH" secondAttribute="leadingMargin" constant="67" id="c2x-yR-yl9"/>
+                                        <constraint firstAttribute="bottom" secondItem="Pck-X6-HAj" secondAttribute="bottom" constant="0.5" id="ig7-Xk-Pxt"/>
+                                        <constraint firstItem="Pck-X6-HAj" firstAttribute="leading" secondItem="alm-Cf-3aH" secondAttribute="leading" constant="83" id="tjc-y0-28b"/>
+                                        <constraint firstItem="ZFR-81-bCL" firstAttribute="leading" secondItem="Pck-X6-HAj" secondAttribute="trailing" constant="8" id="x0I-oQ-lP6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="desc" destination="Pck-X6-HAj" id="qNd-lg-J4m"/>
@@ -124,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z23-pg-0AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066.4000000000001" y="86.806596701649184"/>
+            <point key="canvasLocation" x="2064.8000000000002" y="85.907046476761622"/>
         </scene>
         <!--영화관 정보-->
         <scene sceneID="xh0-66-Wda">
@@ -144,7 +178,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNf-Sq-M6c">
                                             <rect key="frame" x="16" y="48" width="308" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -192,12 +226,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r5Q-sY-dzZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r5Q-sY-dzZ">
+                                <rect key="frame" x="20" y="64" width="328" height="554"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r5Q-sY-dzZ" firstAttribute="top" secondItem="uhq-1g-Sve" secondAttribute="top" id="2Z1-oM-nqM"/>
+                            <constraint firstItem="r5Q-sY-dzZ" firstAttribute="leading" secondItem="uhq-1g-Sve" secondAttribute="leading" constant="20" id="3ax-xv-nrD"/>
+                            <constraint firstItem="uhq-1g-Sve" firstAttribute="bottom" secondItem="r5Q-sY-dzZ" secondAttribute="bottom" id="5Xl-YE-WbU"/>
+                            <constraint firstItem="uhq-1g-Sve" firstAttribute="trailing" secondItem="r5Q-sY-dzZ" secondAttribute="trailing" constant="27" id="VP3-81-d8h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uhq-1g-Sve"/>
                     </view>
                     <navigationItem key="navigationItem" title="상영관명" id="6Sr-qb-uQ2"/>
@@ -234,22 +273,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-CT-Fs6">
-                                <rect key="frame" x="0.0" y="34" width="375" height="633"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-wb-83o">
+                                <rect key="frame" x="169" y="332" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-CT-Fs6">
+                                <rect key="frame" x="20" y="64" width="336" height="564"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-wb-83o">
-                                <rect key="frame" x="169" y="332" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oap-tE-j0Y" firstAttribute="trailing" secondItem="Tnj-CT-Fs6" secondAttribute="trailing" constant="19" id="C0i-vd-daY"/>
+                            <constraint firstItem="Tnj-CT-Fs6" firstAttribute="top" secondItem="Oap-tE-j0Y" secondAttribute="top" id="OCD-8d-TvP"/>
+                            <constraint firstItem="Tnj-CT-Fs6" firstAttribute="bottom" secondItem="Oap-tE-j0Y" secondAttribute="bottom" constant="10" id="caD-sw-Wjm"/>
+                            <constraint firstItem="Tnj-CT-Fs6" firstAttribute="leading" secondItem="Oap-tE-j0Y" secondAttribute="leading" constant="20" id="pVn-OR-SMa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Oap-tE-j0Y"/>
                     </view>
                     <connections>
@@ -286,6 +330,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="g0H-BO-Kz2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NeT-Mw-dax">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
