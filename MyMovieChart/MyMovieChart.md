@@ -4,4 +4,4 @@
 
 ### 정적 데이터 소스를 이용한 테이블뷰 ###
 
-![_](https://user-images.githubusercontent.com/39197978/51027857-47e63f80-15d5-11e9-89df-7a8147355b64.gif)
+![default](https://user-images.githubusercontent.com/39197978/51360681-03483000-1b10-11e9-9a47-476772e1d6d3.gif)
